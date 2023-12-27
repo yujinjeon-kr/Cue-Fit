@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cue-Fit Service</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+         <img src="/static/img/logo3.png" alt="logo1"> 
+        <h1>Cue-Fit<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">홈</a></li>
+          <li><a href="services.html">Cue-Fit 헬스장 추천</a></li>
+          <li><a href="projects.html">오운완 이미지 생성</a></li> 
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down">나만의 <span>헬스장 추천 받기!</span></h2>
+            <p data-aos="fade-up">3만여개의 진실 리뷰 데이터 기반 헬스장 추천 서비스</p>
+            <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">회원 가입하기</a>
+            <a data-aos="fade-up" data-aos-delay="200" href="services.html" class="btn-get-started">Cue-Fit 체험해보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url(/static/img/hero-carousel/dalle4.png)"></div>
+      <div class="carousel-item" style="background-image: url(/static/img/hero-carousel/dalle2.png)"></div>
+      <div class="carousel-item" style="background-image: url(/static/img/hero-carousel/dalle3.png)"></div>
+      <div class="carousel-item" style="background-image: url(/static/img/hero-carousel/dalle4.png)"></div>
+      <div class="carousel-item" style="background-image: url(/static/img/hero-carousel/dalle1.png)"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+            <div class="content">
+              <h3>신규 회원 가입 </h3>
+              <p>회원 가입하시고 Cue-Fit의 서비스를 누려보세요!</p>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade">
+            <form action="services.html" method="post" class="php-email-form">
+              {% csrf_token %}
+              <h3>회원 가입</h3>
+              <p>안녕하세요 Cue-Fit입니다!</p>
+              <div class="row gy-3">
+
+                <div class="col-md-12">
+                  <input type="text" name="username" class="form-control" placeholder="아이디" required>
+                </div>
+
+                <div class="col-md-12 ">
+                  <input type="password" class="form-control" name="password" placeholder="비밀번호" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="gender" placeholder="성별(M/W)" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="number" class="form-control" name="age" placeholder="나이" required>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit">회원 가입하기</button>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Quote Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Get Started Section -->
+
+        <!-- ======= Stats Counter Section ======= -->
+        <section id="stats-counter" class="stats-counter section-bg">
+          <div class="container">
+    
+            <div class="row gy-4">
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                  <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="338" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>강남구 헬스장 수</p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                  <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="113" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>잠백이 강남구 블로그 리뷰 수</p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                  <i class="bi bi-headset color-green flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="11953" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>분석 리뷰 수</p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                  <i class="bi bi-people color-pink flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="35853" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>분석 문장 토큰 수</p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+    
+            </div>
+    
+          </div>
+        </section><!-- End Stats Counter Section -->
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+      <div class="container" data-aos="fade-up"">
+
+    
+    
+  <div class=" section-header">
+        <h2>Cue-Fit 알고리즘 최고의 헬스장</h2>
+        <p>서비스 / PT / 시설 카테고리별 최고의 헬스장은?</p>
+      </div>
+
+      <div class="row gy-5">
+
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="/static/img/짐박스.png" class="img-fluid" alt="">
+              <span class="post-date">Best Service</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">헬스파르타클럽</h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">서울 강남구 삼성로63길 17 수인분당한티역 2번 출구에서 654m 미터
+                  </span>
+                </div>
+                <span class="px-3 text-black-50"></span>
+                <div class="d-flex align-items-center">
+                </div>
+              </div>
+
+              <hr>
+
+              <a href="#tab-1" class="readmore stretched-link"><span>자세히 보기</span><i class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div><!-- End post item -->
+
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="/static/img/학동역.png" class="img-fluid" alt="">
+              <span class="post-date">Best PT</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">원스텝짐</h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">서울 강남구 압구정로29길 69 압구정현대아파트10차 상가 지하 1층 3압구정역 1번 출구에서 689m 미터
+
+                  </span>
+                </div>
+                <span class="px-3 text-black-50"></span>
+                <div class="d-flex align-items-center">
+                </div>
+              </div>
+
+              <hr>
+
+              <a href="#tab-1" class="readmore stretched-link"><span>자세히 보기</span><i class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div><!-- End post item -->
+
+        <div class="col-xl-4 col-md-6">
+          <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="/static/img/팀버핏.png" class="img-fluid" alt="">
+              <span class="post-date">Best Facility</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">큐짐
+              </h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">서울 강남구 압구정로 309 상가 에이동 2층 202호 주식회사 큐헬스케어 수인분당압구정로데오역 7번 출구에서 622m 미터
+
+                  </span>
+                </div>
+                <span class="px-3 text-black-50"></span>
+                <div class="d-flex align-items-center">
+                </div>
+              </div>
+
+              <hr>
+
+              <a href="#tab-1" class="readmore stretched-link"><span>자세히 보기</span><i class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div><!-- End post item -->
+
+      </div>
+
+      </div>
+    </section>
+    <!-- End Recent Blog Posts Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <ul class="nav nav-tabs row  g-2 d-flex">
+
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+              <h4>헬스파르타클럽</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+              <h4>원스텝짐</h4>
+            </a><!-- End tab nav item -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+              <h4>큐짐</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <h3>헬스파르타클럽</h3>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <strong>사업장 유형: </strong> PT 전문</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>주소:</strong> 서울 강남구 삼성로63길 17 수인분당한티역 2번 출구에서 654m </li>
+                  <li><i class="bi bi-check2-all"></i> <strong>운영시간: </strong> 평일(오전 6:00 - 오후 11:30) / 토요일(운영) / 일요일(휴뮤)</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>전화번호:</strong> 02-556-4864 </li>
+                  <li><i class="bi bi-check2-all"></i> <strong>네이버홈 주소:</strong> https://pcmap.place.naver.com/place/37157400/home</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>네이버 블로그 주소:</strong> https://blog.aver.com/epirim30</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>특이사항:</strong> 웨이트트레이닝의 고립과 기능성트레이닝의 움직임을 30여년이상 연구 트레이너들과 회원들에게 접목시키고 15년이상 강남권에 서 개인피티회원들을 운동지도하신 P.T 마에스트로 트레이너의 개인별 맞춤 트레이닝클럽</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>추가 정보:</strong> 스포츠영양학을 운동에 접목시켜 특별한 식단제한없이도 빠른 신체변화를 이끌어내는 프로그램과 식단개발로 유명</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                <img src="/static/img/서비스부문_헬스파르타/image2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>원스텝짐</h3>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <strong>사업장 유형: </strong> PT 전문</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>주소:</strong> 서울 강남구 압구정로29길 69 압구정현대아파트10차 상가 지하 1층 3압구정역 1번 출구에서 689m 미터 </li>
+                  <li><i class="bi bi-check2-all"></i> <strong>운영시간: </strong> 평일(오전 6:00 - 오후 12:00) / 토요일(운영) / 일요일(휴뮤)</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>전화번호:</strong> 0507-1308-7339 </li>
+                  <li><i class="bi bi-check2-all"></i> <strong>네이버홈 주소:</strong> https://pcmap.place.naver.com/place/1513013399/home</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>추가 정보:</strong> 압구정 프라이빗 퍼스널 트레이닝샵 - 전직원 5년 이상의 경력직 트레이너 및 선수 - 프리미엄 PT - 선수 육성 - 바디프로필 촬영 - 재 활 및 통증케어 - 세계 3대 명품기구 라이프피트니스 16종 - 지문등록 입장 / VIP 회원 관리 </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="/static/img/수업부문_원스텝짐/image.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>큐짐</h3>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <strong>사업장 유형: </strong> PT 전문</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>주소:</strong> 서울 강남구 압구정로 309 상가 에이동 2층 202호 주식회사 큐헬스케어 수인분당압구정로데오역 7번 출구에서 622m 미터</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>운영시간: </strong> 평일(오전 6:00 - 오후 11:30) / 토요일(운영) / 일요일(휴뮤)</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>전화번호:</strong> 0507-1387-9684 </li>
+                  <li><i class="bi bi-check2-all"></i> <strong>네이버홈 주소:</strong> https://pcmap.place.naver.com/place/436864830/home</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>네이버 블로그 주소:</strong> http://www.istagram.com/q_gym</li>
+                  <li><i class="bi bi-check2-all"></i> <strong>추가 정보:</strong> <PT> 큐짐은 올바른 운동 방법과 방향, 삶의 패턴 개선까지 유도하는 체계화된 시스템을 구축하고 있습니다. 차별화된 관리와 프로 그램은 더욱 나은 삶을 만드는 것에 집중하여 긍정적인 반응으로 고객 만족을 끌어내고 있습니다. <태닝> 최상급 독일 UVA 램프 태 닝 머신을 통해 건강하고 탄력 있는 피부를 만들 수 있는 서비스 입니다. 가시광선 적외선 외, 복합 유해 광선이 포함</li>
+                  
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="/static/img/시설부문_큐짐/image3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Cue-Fit</h3>
+              <p>
+                아시아경제 교육센터<br>
+                서울 중구 퇴계로 166<br><br>
+                <strong>연락처:</strong> +82 010-1004-1004<br>
+                <strong>이메일:</strong> cufit@gmail.com<br>
+              </p>
+            </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Cue-Fit 정보</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">BEST 서비스</a></li>
+              <li><a href="#">BEST PT</a></li>
+              <li><a href="#">BEST 시설</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>헬스장 추천 서비스</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">헬스장 추천</a></li>
+
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>오운완 이미지 생성</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">Dall E 이미지 생성</a></li>
+              <li><a href="#">사용자 이미지 배경 제거</a></li>
+              <li><a href="#">이미지 합성</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Cue-Fit</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

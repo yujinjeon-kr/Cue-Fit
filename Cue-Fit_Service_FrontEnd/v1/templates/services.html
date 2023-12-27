@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cue-Fit 헬스장 추천 서비스</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="/static/img/logo1.png" alt=""> -->
+        <h1>Cue-Fit<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">홈</a></li>
+          <li><a href="services.html">Cue-Fit 헬스장 추천</a></li>
+          <li><a href="projects.html">오운완 이미지 생성</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/static/img/service1.png');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>헬스장 추천 서비스</h2>
+        <ol>
+          <li>본인의 취향에 맞는 헬스장을 추천해드립니다</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .active {
+          background-color: #e6b800;
+          opacity: 0.5;
+          }
+    </style>
+    <div class="container mx-auto p-20">
+      <h1 class="text-center text-4xl font-bold mb-6">헬스장 유형을 선택해주세요!</h1>
+      
+      <h3 class="text-left text-2xl font-bold mb-4">성별</h3>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <button id="men" class="bg-blue-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 2.0em; font-weight: bold;" onclick="selectOption('gender', 'men')">남성</button>
+        <button id="women" class="bg-pink-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 2.0em; font-weight: bold;" onclick="selectOption('gender', 'women')">여성</button>
+      </div>
+      
+      <h3 class="text-left text-2xl font-bold mb-4">나이</h3>
+      <div class="grid grid-cols-6 gap-4 mb-6">
+        <button id="age10" class="bg-gray-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 1.5em; font-weight: bold;"onclick="selectOption('age', 'age10')">10대</button>
+        <button id="age20" class="bg-gray-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 1.5em; font-weight: bold;"onclick="selectOption('age', 'age20')">20대</button>
+        <button id="age30" class="bg-gray-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 1.5em; font-weight: bold;"onclick="selectOption('age', 'age30')">30대</button>
+        <button id="age40" class="bg-gray-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 1.5em; font-weight: bold;"onclick="selectOption('age', 'age40')">40대</button>
+        <button id="age50" class="bg-gray-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 1.5em; font-weight: bold;"onclick="selectOption('age', 'age50')">50대</button>
+        <button id="age60" class="bg-gray-200 p-4 text-center rounded-lg focus:outline-none" style="font-size: 1.5em; font-weight: bold;"onclick="selectOption('age', 'age60')">60대~</button>
+      </div>
+      
+      <h3 class="text-left text-2xl font-bold mb-4">헬스장 유형</h3>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <button id="gym" class="bg-gray-200 p-8 text-center rounded-lg focus:outline-none relative h-96 " onclick="selectOption('category', 'gym')" style="background-image: url('/static/img/헬스장1214.png');"; background-size: cover;">
+          <span class="text-white text-3xl font-bold" style="background: rgba(0, 0, 0, 0.5);">헬스장</span>
+        </button>
+        <button id="pt" class="bg-gray-200 p-8 text-center rounded-lg focus:outline-none relative h-96" onclick="selectOption('category', 'pt')" style="background-image: url('/static/img/피티1214.png');" background-size: cover;">
+          <span class="text-white text-3xl font-bold" style="background: rgba(0, 0, 0, 0.5);">PT 전문</span>
+        </button>
+      </div>
+      
+      <div class="text-center">
+        <button id="next" class="bg-yellow-500 text-white p-4 rounded-lg focus:outline-none" style="font-size: 1.5em;"onclick="goToNext()">다음</button>
+      </div>
+    </div>
+    
+    <script>
+      // 사용자 선택을 저장할 객체
+      let userSelection = {
+        gender: null,
+        age: null,
+        category: null
+      };
+    
+      function selectOption(group, id) {
+        // 선택 해제
+        document.querySelectorAll(`button[id^=${group}]`).forEach(btn => {
+          btn.classList.remove('active');
+        });
+    
+        // 선택
+        document.getElementById(id).classList.add('active');
+    
+        // 사용자 선택 업데이트
+        let value = id.replace(group, ''); // 예: 'gendermen'에서 'men' 추출
+        userSelection[group] = value;
+      }
+    
+      function goToNext() {
+        // 사용자 선택 저장
+        localStorage.setItem('userSelection', JSON.stringify(userSelection));
+    
+        // 다음 페이지로 이동
+        window.location.href = 'service2.html';
+      }
+      </script>
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Cue-Fit</h3>
+              <p>
+                아시아경제 교육센터<br>
+                서울 중구 퇴계로 166<br><br>
+                <strong>연락처:</strong> +82 010-1004-1004<br>
+                <strong>이메일:</strong> cufit@gmail.com<br>
+              </p>
+            </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Cue-Fit 정보</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">BEST 서비스</a></li>
+              <li><a href="#">BEST PT</a></li>
+              <li><a href="#">BEST 시설</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>헬스장 추천 서비스</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">헬스장 추천</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>오운완 이미지 생성</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">Dall E 이미지 생성</a></li>
+              <li><a href="#">사용자 이미지 배경 제거</a></li>
+              <li><a href="#">이미지 합성</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Cue-Fit</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+

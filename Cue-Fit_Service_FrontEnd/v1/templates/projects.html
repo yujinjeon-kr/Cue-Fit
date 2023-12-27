@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>Cue-Fit 오운완 이미지 생성</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="/static/img/logo.png" alt=""> -->
+        <h1>Cue-Fit<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">홈</a></li>
+          <li><a href="services.html">Cue-Fit 헬스장 추천</a></li>
+          <li><a href="projects.html">오운완 이미지 생성</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/static/img/dalle11.png');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>오운완 이미지 생성</h2>
+        <ol>
+          <li>오늘 운동 완료(오운완) 이미지 생성 및 합성 서비스</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Our Projects Section ======= -->
+    <section id="projects" class="projects">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>사용자 이미지 배경 제거 및 배경 생성</h2>
+          <p>본인의 사진을 배경 제거하고 Dall-E를 이용해서 배경 이미지를 생성해보세요!</p>
+        </div>
+        {% csrf_token %}
+        <div class="row">
+          <!-- 사용자 사진 업로드 컬럼 -->
+          <div class="col-lg-6 col-md-6">
+            <form id="image-upload-form" class="form-inline" method="post" enctype="multipart/form-data" action="{% url 'v1:upload_and_process_image' %}">
+              {% csrf_token %}
+              <!-- 이미지 업로드 입력 폼 -->
+              <div class="form-group mb-2">
+                <label for="image-upload" class="form-label" style="font-size: 24px;"><strong>본인의 사진 첨부:</strong></label>
+                <p>본인이 나온 사진을 첨부해주세요! 배경을 제거해서 합성해드릴게요</p>
+                
+                <input type="file" id="image-upload" name="image" class="form-control mb-4" accept="image/*">
+                <button type="submit" id="remove-bg-button" class="btn btn-secondary mb-4">배경 제거하기</button>
+              </div>
+            </form>
+            <div id="uploaded-image" style="margin-bottom: 30px; text-align: center;">
+              {% if output_image_url %}
+                <img src="{{ output_image_url }}" alt="Processed Image" style="max-width:100%;">
+              {% endif %}
+            </div>
+          </div>
+          <!-- DALL-E 이미지 생성 폼 컬럼 -->
+          <div class="col-lg-6 col-md-6">
+            <form id="dalle-form" class="form-inline">
+              <!-- 이미지 설명 입력 폼 -->
+              <div class="form-group mb-2">
+                <label for="prompt" class="form-label"style="font-size: 24px;"><strong>Cue-Fit (Dall-E 활용) 배경 이미지 생성 Tip!</strong></label>
+                <p>원하는 배경 입력은 자세하게 부탁드립니다!</p>
+              </div>
+              <input type="text" id="prompt" class="form-control mb-4" placeholder="이미지에 대한 설명을 영어로 입력해주세요">
+              <button type="submit" class="btn btn-primary mb-4">생성하기</button>
+              <button type="button" id="next" class="btn btn-primary mb-4" onclick="redirectToProject2()">다음</button>
+            </form>
+            <div id="generated-image">
+              <!-- DALL-E에 의해 생성된 이미지가 여기에 표시됩니다 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // '다음' 버튼 클릭 시 project2.html 페이지로 리다이렉트
+      function redirectToProject2() {
+        window.location.href = '/project2.html';
+      }
+    </script>
+<!-- End Our Projects Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Cue-Fit</h3>
+              <p>
+                아시아경제 교육센터<br>
+                서울 중구 퇴계로 166<br><br>
+                <strong>연락처:</strong> +82 010-1004-1004<br>
+                <strong>이메일:</strong> cufit@gmail.com<br>
+              </p>
+            </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Cue-Fit 정보</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">BEST 서비스</a></li>
+              <li><a href="#">BEST PT</a></li>
+              <li><a href="#">BEST 시설</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>헬스장 추천 서비스</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">헬스장 추천</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>오운완 이미지 생성</h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#">Dall E 이미지 생성</a></li>
+              <li><a href="#">사용자 이미지 배경 제거</a></li>
+              <li><a href="#">이미지 합성</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Cue-Fit</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/dalle.js"></script>
+
+</body>
+
+</html>
+
