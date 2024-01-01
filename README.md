@@ -51,7 +51,7 @@
   - Cue-Fit Service_FrondEnd 폴더
   - Cue-Fit Service_demo.mp4
 
-### 엑셀 데이터 파일
+### 6. 엑셀 데이터 파일
   - category.xlsx
   - modify.xlsx
   - oneword.xlsx
@@ -59,3 +59,6 @@
   - word_list.xlsx
   - Machine_Substitution.xlsx
   - Score_Rate_Table.xlsx
+    
+### 7. 프로젝트 프레젠테이션 자료
+  - Cue-Fit_Presentation.pptx
