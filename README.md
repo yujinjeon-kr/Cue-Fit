@@ -42,10 +42,10 @@
   - Cue-Fit_Vader_Sentiment_Analysis.ipynb
   - Cue-Fit_Find_FalseReview.ipynb
   - Cue-Fit_Extract_Equipments.ipynb
-  - 
+
 ### 4. 추천 알고리즘 소스코드
   - Cue-Fit_Recommendation.ipynb
-  - 
+
 ### 5. UI/웹사이트 구현 소스코드 및 데모
   - Cue-Fit_UI.ipynb
   - Cue-Fit Service_FrondEnd 폴더
